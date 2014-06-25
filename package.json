@@ -1,6 +1,6 @@
 {
   "name": "durandal-scaffold",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Scaffolding utility for Durandal SPA Framework",
   "main": "durandal-scaffold.js",
   "scripts": {
@@ -12,8 +12,8 @@
     "Knockout",
     "Scaffolding"
   ],
-  "author": "Vildan Softic",
-  "license": "ISC",
+  "author": "Vildan Softic (zewa666)",
+  "license": "WTFPL",
   "bin": {
 	   "ds": "durandal-scaffold.js"
   },
@@ -24,5 +24,10 @@
     "underscore": "*",
     "q": "*",
     "bower": "*"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zewa666/durandal-scaffold.git"
+  },
+  "bugs": "https://github.com/zewa666/durandal-scaffold/issues"
 }
