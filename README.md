@@ -8,11 +8,12 @@ It is used via a guided approach prompting for actions or via shortcuts (see bel
 Features
 -------------------
 
+##### Create the ds.config.json file which is used for specifying the appropriate paths
 ```js
 ds setup
 ```
-Create the ds.config.json file which is used for specifying the appropriate paths
 
+##### Create default folder structure
 ```js
 ds prepare
 ----------
@@ -23,22 +24,35 @@ ds prepare
 | test
 | ----> specs
 ```
-Create default folder structure
 
+##### Install the Durandal SPA Framework via bower
 ```js
 ds install
 ```
-Install the Durandal SPA Framework via bower
 
+##### Create a VM + Spec file
 ```js
 ds vm [vmname]
 ```
-Create a VM + Spec file
 
+##### Create a VM + View + Spec file
 ```js
 ds vmfull [vmname]
 ```
-Create a VM + View + Spec file
+
+##### Run guided mode
+```js
+ds
+----------
+
+[?] Choose a command: (Use arrow keys)
+> Create a VM/Spec
+  Create a VM/View/Spec
+  Prepare the project structure
+  Install Durandal via Bower
+  Exit
+
+```
 
 
 Quick Example
