@@ -40,8 +40,37 @@ ds vm [vmname]
 ds vmfull [vmname]
 ```
 
-##### Run guided mode
+##### Create the default Karma configuration file
+This will setup the Karma Runner config file, preset to Jasmine 2.0 and RequireJS,
+including the path setup for the DurandalJS Framework and it's dependencies.
+
 ```js
+ds karma-config
+```
+
+Additionally you'd need to install Karma and it's necessary dependencies. The
+easiest method is to add following entries to your package.json file
+
+```json
+"devDependencies": {
+  "karma": "~0.12.16",
+  "karma-jasmine": "~0.2.0",
+  "karma-phantomjs-launcher": "~0.1.4",
+  "requirejs": "~2.1.14",
+  "karma-requirejs": "~0.2.2"
+}
+```
+
+This will setup Karma with Jasmine 2.0 as well as PhantomJS as the headless
+browser for running the tests. Karma-requirejs finally helps working with the
+RequireJS environment of the DurandalJS Framework.
+
+
+##### Run guided mode
+After you've run ds setup you can continue all the other commands via the guided
+cli mode instead of remembering all the parameters.
+
+```Shell
 ds
 ----------
 
@@ -50,6 +79,7 @@ ds
   Create a VM/View/Spec
   Prepare the project structure
   Install Durandal via Bower
+  Create the default Karma configuration file
   Exit
 
 ```
