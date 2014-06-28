@@ -1,5 +1,5 @@
 define(function(require) {
-  describe({{name}}, function() {
+  describe("{{name}}", function() {
     beforeEach(function() {
       // Setup tasks
     });

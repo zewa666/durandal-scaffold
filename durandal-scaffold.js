@@ -39,6 +39,10 @@ var scaffolder = function() {
       name: "Install Durandal via Bower"
     },
     {
+      value: "karma-config",
+      name: "Create the default Karma configuration file"
+    },
+    {
       value: "exit",
       name: "Exit"
     }
@@ -211,6 +215,18 @@ var scaffolder = function() {
     return deferred.promise;
   };
 
+  self.createKarmaConfig = function() {
+    var deferred = Q.defer();
+    util.readFile(path.join(modulepath, "templates/test-main.js"), function(data) {
+      util.createFile("test-main.js", data, function() {
+        console.log(warn("Please add your additional dependencies to the karma config file \"test-main.js\""));
+        process.exit(1);
+      });
+    });
+
+    return deferred.promise;
+  };
+
   self.processSelection = function(commandParam, shouldRepeat) {
     var promise;
 
@@ -230,9 +246,14 @@ var scaffolder = function() {
       case "install":
         promise = self.installDurandalBower();
         break;
+      case "karma-config":
+        promise = self.createKarmaConfig();
+        break;
       case "exit":
         process.emit ("SIGINT");
         return;
+      default:
+        process.emit ("SIGINT");
     }
 
     promise.then(function() {
