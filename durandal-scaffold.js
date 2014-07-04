@@ -127,7 +127,14 @@ var scaffolder = function() {
       fs.mkdirSync("./test");
       fs.mkdirSync("./test/specs");
       console.log(success("Structure created!"));
-      deferred.resolve();
+
+      util.readFile(path.join(modulepath, "./templates/durandal_main.js"), function(data) {
+        util.createFile("app/main.js", data, function() {
+          console.log(success("App main.js created!"));
+          console.log(warn("Please adapt the main.js file according to your needs"));
+          deferred.resolve();
+        });
+      });
     } catch (ex) {
       if(ex.errno === 47) {
         console.log(error("Structure already exists"));
@@ -185,8 +192,15 @@ var scaffolder = function() {
       console.log(error("Error while installing Durandal via Bower"));
       deferred.reject(data);
     }).on('end', function(data) {
-      console.log(success("\n\nInstallation complete!"));
-      deferred.resolve();
+      bower.commands.install(["bootstrap"], {}).on('log', function(data) {
+        process.stdout.write(warn("█ "));
+      }).on('end', function(data) {
+        console.log(success("\n\nInstallation complete!"));
+        deferred.resolve();
+      }).on('error', function(data) {
+        console.log(error("Error while installing Twitter Bootstrap via Bower"));
+        deferred.reject(data);
+      });
     });
     return deferred.promise;
   };

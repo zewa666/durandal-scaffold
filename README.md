@@ -14,6 +14,10 @@ ds setup
 ```
 
 ##### Create default folder structure
+Besides the creation of the basic folder structure the scaffolding will also
+create a basic app main.js entry file, which is already wired up properly with
+RequireJS configs.
+
 ```js
 ds prepare
 ----------
@@ -21,11 +25,12 @@ ds prepare
 | app
 | ----> viewmodels
 | ----> views
+| ----> main.js
 | test
 | ----> specs
 ```
 
-##### Install the Durandal SPA Framework via bower
+##### Install the Durandal SPA Framework and Twitter Bootstrap v3 via bower
 ```js
 ds install
 ```
