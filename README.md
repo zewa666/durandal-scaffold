@@ -1,6 +1,8 @@
 Durandal Scaffolding Node CLI
 ===========
 
+<a href="http://www.wtfpl.net/download/wtfpl-badge-2/" rel="attachment wp-att-50"><img alt="wtfpl-badge-2" src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-2.png" width="80" height="15"></a>
+
 Durandal-scaffold is a Node.JS CLI tool to help you get started with the [Durandal SPA Framework](http://durandaljs.com/).
 Besides scaffolding new Viewmodels, Views and Spec files it supports as well the setup of your frontend app structure.
 It is used via a guided approach prompting for actions or via shortcuts (see below)
