@@ -40,7 +40,7 @@ var scaffolder = function() {
     },
     {
       value: "karma-config",
-      name: "Create the default Karma configuration file"
+      name: "Create the default Karma configuration and test-main file"
     },
     {
       value: "exit",
@@ -233,8 +233,13 @@ var scaffolder = function() {
     var deferred = Q.defer();
     util.readFile(path.join(modulepath, "templates/test-main.js"), function(data) {
       util.createFile("test-main.js", data, function() {
-        console.log(warn("Please add your additional dependencies to the karma config file \"test-main.js\""));
-        process.exit(1);
+        console.log(warn("Please add your additional dependencies to the karma runner file \"test-main.js\""));
+        util.readFile(path.join(modulepath, "templates/karma.conf.js"), function(data) {
+          util.createFile("karma.conf.js", data, function() {
+            console.log(warn("Please setup karma.conf.js to include all your files under test"));
+            process.exit(1);
+          });
+        });
       });
     });
 
