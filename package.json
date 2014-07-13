@@ -1,6 +1,6 @@
 {
   "name": "durandal-scaffold",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Scaffolding utility for Durandal SPA Framework",
   "main": "durandal-scaffold.js",
   "scripts": {

@@ -2,5 +2,6 @@ define(function(require) {
   var vm_{{name}} = function() {
     //Your code
   };
-  return vm_{{name}}
+  
+  return vm_{{name}};
 });
